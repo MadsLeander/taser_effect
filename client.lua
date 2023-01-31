@@ -38,9 +38,9 @@ end
 
 -- Use game events to avoid unnecessary threads/loops
 AddEventHandler('gameEventTriggered', function(event, args)
-	if event == "CEventNetworkEntityDamage" then
+    if event == "CEventNetworkEntityDamage" then
         local playerPed = PlayerPedId()
-		if playerPed == args[1] then
+        if playerPed == args[1] then
             local attacker = args[2]
             local weaponHash = args[7]
 
@@ -61,5 +61,5 @@ AddEventHandler('gameEventTriggered', function(event, args)
                 end)
             end
         end
-	end
+    end
 end)
