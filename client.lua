@@ -26,13 +26,15 @@ end
 
 local function DoTaserEffect()
     stunnedStack = stunnedStack + 1
-    SetTimecycleModifierStrength(0.5)
-    SetTimecycleModifier("Dont_tazeme_bro")
+    SetTimecycleModifierStrength(0.5) -- The strength of the timecycle
+    SetTimecycleModifier("dont_tazeme_bro") -- Other timecycles can for example be: hud_def_desat_Trevor, dont_tazeme_bro_b, drug_wobbly etc.
+    -- ShakeGameplayCam("FAMILY5_DRUG_TRIP_SHAKE", 0.25) -- Uncomment this if you want the camera to shake (remember to do it below aswell)
 
     Wait(8000) -- Edit the length of the effect here. 8000 = 8 seconds
     stunnedStack = stunnedStack - 1
     if stunnedStack == 0 then
         FadeOutStunnedTimecycle(0.5)
+        -- StopGameplayCamShaking(false) -- Uncomment this if you want the camera to shake
     end
 end
 
