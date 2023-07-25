@@ -4,6 +4,9 @@ lua54 'yes'
 
 author 'Mads'
 description 'Taser Effect'
-version '1.0.0'
+version '1.0.1'
 
-client_script 'client.lua'
+client_scripts {
+    'config.lua',
+    'client.lua'
+}
