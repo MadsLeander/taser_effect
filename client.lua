@@ -88,7 +88,7 @@ AddEventHandler('gameEventTriggered', function(event, args)
 
         if playerPed == args[1] and attacker ~= -1 and (weaponHash == 911657153 or weaponHash == -1833087301) then
             OnLocalPlayerStunned(playerPed, attacker)
-        elseif not IsPedAPlayer(args[1]) and NetworkHasControlOfEntity(args[1]) and (weaponHash == 911657153 or weaponHash == -1833087301) then
+        elseif IsEntityAPed(args[1]) and not IsPedAPlayer(args[1]) and NetworkHasControlOfEntity(args[1]) and (weaponHash == 911657153 or weaponHash == -1833087301) then
             OnNPCStunned(args)
         end
     end
