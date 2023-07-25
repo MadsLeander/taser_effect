@@ -12,5 +12,4 @@ Config.CameraShakeName = "FAMILY5_DRUG_TRIP_SHAKE"
 Config.CameraShakeIntensity = 0.25
 
 Config.DisableNPCWrithe = true -- Disabled writhe for NPC when getting stunned. This will also make it so npc's won't do go into writhe even after they are done beeing stunned. (This ONLY effects stunned peds)
-
 Config.NPCDropWeapon = true -- Makes NPC's drop their weapon when they get stunned
