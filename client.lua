@@ -1,29 +1,6 @@
 local stunnedCache = {}
 local stunnedStack = 0
 
-local function FadeOutStunnedTimecycle(from)
-    local strength = from
-    local increments = from / 100
-
-    for _i = 1, 100 do
-        Wait(50)
-        strength = strength - increments
-
-        if stunnedStack >= 1 then
-            return
-        end
-
-        if strength <= 0 then
-            break
-        end
-
-        SetTimecycleModifierStrength(strength)
-    end
-
-    SetTimecycleModifierStrength(0.0)
-    ClearTimecycleModifier()
-end
-
 local function DoTaserEffect(effectLength)
     stunnedStack = stunnedStack + 1
     SetTimecycleModifierStrength(Config.TimecycleStrength)
@@ -36,7 +13,7 @@ local function DoTaserEffect(effectLength)
     Wait(effectLength)
     stunnedStack = stunnedStack - 1
     if stunnedStack == 0 then
-        FadeOutStunnedTimecycle(0.5)
+        SetTransitionTimecycleModifier('default', Config.TimecycleTransitionDuration)
         if Config.CameraShake then
             StopGameplayCamShaking(false)
         end
