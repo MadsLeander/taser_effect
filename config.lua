@@ -1,5 +1,12 @@
 Config = {}
 
+Config.ValidWeapons = {
+    [`WEAPON_STUNGUN`] = true,
+    [`WEAPON_STUNGUN_MP`] = true,
+    [`WEAPON_ELECTRIC_FENCE`] = true,
+    [`WEAPON_STUNROD`] = true
+}
+
 -- Due to how this is set up it usually won't effect the player ped the first time the get stunned.
 Config.MinGroundTime = 5000 -- The minimum time in milliseconds that players will lay on the ground after getting tazed
 Config.MaxGroundTime = 9000 -- The maximum time in milliseconds that players will lay on the ground after getting tazed
